@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardBehaviour : MonoBehaviour {
 
@@ -10,11 +11,8 @@ public class CardBehaviour : MonoBehaviour {
     [SerializeField] UnityEngine.UI.Image image;
 
     public void OnButtonClick() {
-        if(isShown == true) {
-            HideCard();
-        } else {
-            ShowCard();
-        }
+        GameManager.instance.CardButtonClick(GetComponent<Button>());
+        ShowCard();
     }
 
     void ShowCard() {
